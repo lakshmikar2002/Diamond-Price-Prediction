@@ -1,9 +1,13 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 # Load model
-model = pickle.load(open("diamond_knn_model.pkl", "rb"))
+
+model_path = os.path.join(os.path.dirname(__file__), "diamond_knn_model.pkl")
+
+model = pickle.load(open(model_path, "rb"))
 
 st.title("💎 Diamond Price Prediction App")
 
